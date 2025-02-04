@@ -7,14 +7,15 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Movie Listings</h1>
-      <ul>
+      <header className="header">MovieX</header>
+      <div className="movie-container">
         {movies.map((movie) => (
-          <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>{movie.title} ({movie.year})</Link>
-          </li>
+          <Link key={movie.id} to={`/movie/${movie.id}`} className="movie-card">
+            <img src={movie.image} alt={movie.title} />
+            <h3>{movie.title} ({movie.year})</h3>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
