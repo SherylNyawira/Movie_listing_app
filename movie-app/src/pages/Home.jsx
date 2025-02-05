@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div>
-      <header className="header">MovieX</header>
+      <header className="header">Movie.A</header>
       <div className="movie-container">
         {movies.map((movie) => (
           <Link key={movie.id} to={`/movie/${movie.id}`} className="movie-card">
