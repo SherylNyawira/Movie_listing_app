@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import React from "react";
 
 //Create and export MovieContext
 export const MovieContext = createContext();
@@ -27,9 +28,12 @@ export const MovieProvider = ({ children }) => {
       description: "Batman faces off against the Joker in Gotham."
     }
   ]);
-
+  const addMovie = (newMovie) => {
+    setMovies([...movies, newMovie]);
+  };
+  
   return (
-    <MovieContext.Provider value={{ movies, setMovies }}>
+    <MovieContext.Provider value={{ movies, setMovies, addMovie }}>
       {children}
     </MovieContext.Provider>
   );
